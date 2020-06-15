@@ -1,2 +1,4 @@
 .idea/*
 /run-unittest-python/tests.log
+*.pyc
+tests.log
