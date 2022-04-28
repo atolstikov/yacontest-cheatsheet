@@ -1,0 +1,244 @@
+{
+  "rules" : [
+  {
+    "problem": "0",
+    "hideWhenSolved" : {
+      "scope" : "local",
+      "value" : true
+    },
+    "hideWhenAttempted" : {
+      "scope" : "local",
+      "value" : true
+    },
+    "visibleDuring": 1800000
+  }, {
+    "problem" : "1",
+    "shouldNotBeAttempted" : {
+      "scope" : "local",
+      "value" : [ "0" ],
+      "quantifier" : "any"
+    },
+    "shouldNotBeVisible" : {
+      "scope" : "local",
+      "value" : [ "0" ],
+      "quantifier" : "any"
+    }
+  }, {
+    "problem" : "2",
+    "shouldNotBeAttempted" : {
+      "scope" : "local",
+      "value" : ["0"],
+      "quantifier" : "any"
+    },
+    "shouldNotBeVisible" : {
+      "scope" : "local",
+      "value" : [ "0" ],
+      "quantifier" : "any"
+    }
+  }, {
+    "problem" : "3",
+    "shouldNotBeAttempted" : {
+      "scope" : "local",
+      "value" : [ "0" ],
+      "quantifier" : "any"
+    },
+    "shouldNotBeVisible" : {
+      "scope" : "local",
+      "value" : [ "0" ],
+      "quantifier" : "any"
+    }
+  }, {
+    "problem" : "4",
+    "shouldNotBeAttempted" : {
+      "scope" : "local",
+      "value" : [ "0" ],
+      "quantifier" : "any"
+    },
+    "shouldNotBeVisible" : {
+      "scope" : "local",
+      "value" : [ "0" ],
+      "quantifier" : "any"
+    }
+  }, {
+    "problem" : "5",
+    "shouldNotBeAttempted" : {
+      "scope" : "local",
+      "value" : [ "0" ],
+      "quantifier" : "any"
+    },
+    "shouldNotBeVisible" : {
+      "scope" : "local",
+      "value" : [ "0" ],
+      "quantifier" : "any"
+    }
+  }, {
+    "problem" : "6",
+    "shouldNotBeAttempted" : {
+      "scope" : "local",
+      "value" : [ "0" ],
+      "quantifier" : "any"
+    },
+    "shouldNotBeVisible" : {
+      "scope" : "local",
+      "value" : [ "0" ],
+      "quantifier" : "any"
+    }
+  }, {
+    "problem" : "7",
+    "shouldNotBeAttempted" : {
+      "scope" : "local",
+      "value" : [ "0" ],
+      "quantifier" : "any"
+    },
+    "shouldNotBeVisible" : {
+      "scope" : "local",
+      "value" : [ "0" ],
+      "quantifier" : "any"
+    }
+  }, {
+    "problem" : "8",
+    "shouldNotBeAttempted" : {
+      "scope" : "local",
+      "value" : [ "0" ],
+      "quantifier" : "any"
+    },
+    "shouldNotBeVisible" : {
+      "scope" : "local",
+      "value" : [ "0" ],
+      "quantifier" : "any"
+    }
+  }, {
+    "problem" : "9",
+    "shouldNotBeAttempted" : {
+      "scope" : "local",
+      "value" : [ "0" ],
+      "quantifier" : "any"
+    },
+    "shouldNotBeVisible" : {
+      "scope" : "local",
+      "value" : [ "0" ],
+      "quantifier" : "any"
+    }
+  }, {
+    "problem" : "10",
+    "shouldNotBeAttempted" : {
+      "scope" : "local",
+      "value" : [ "0" ],
+      "quantifier" : "any"
+    },
+    "shouldNotBeVisible" : {
+      "scope" : "local",
+      "value" : [ "0" ],
+      "quantifier" : "any"
+    }
+  }, {
+    "problem" : "11",
+    "shouldNotBeAttempted" : {
+      "scope" : "local",
+      "value" : [ "0" ],
+      "quantifier" : "any"
+    },
+    "shouldNotBeVisible" : {
+      "scope" : "local",
+      "value" : [ "0" ],
+      "quantifier" : "any"
+    }
+  }, {
+    "problem" : "12",
+    "shouldNotBeAttempted" : {
+      "scope" : "local",
+      "value" : [ "0" ],
+      "quantifier" : "any"
+    },
+    "shouldNotBeVisible" : {
+      "scope" : "local",
+      "value" : [ "0" ],
+      "quantifier" : "any"
+    }
+  }, {
+    "problem" : "A",
+    "shouldNotBeVisible" : {
+      "scope" : "local",
+      "value" : [ "1", "0" ],
+      "quantifier" : "all"
+    }
+  }, {
+    "problem" : "B",
+    "shouldNotBeVisible" : {
+      "scope" : "local",
+      "value" : [ "1", "0" ],
+      "quantifier" : "all"
+    }
+  }, {
+    "problem" : "C",
+    "shouldNotBeVisible" : {
+      "scope" : "local",
+      "value" : [ "1", "0" ],
+      "quantifier" : "all"
+    }
+  }, {
+    "problem" : "D",
+    "shouldNotBeVisible" : {
+      "scope" : "local",
+      "value" : [ "1", "0" ],
+      "quantifier" : "all"
+    }
+  }, {
+    "problem" : "E",
+    "shouldNotBeVisible" : {
+      "scope" : "local",
+      "value" : [ "1", "0" ],
+      "quantifier" : "all"
+    }
+  }, {
+    "problem" : "F",
+    "shouldNotBeVisible" : {
+      "scope" : "local",
+      "value" : [ "1", "0" ],
+      "quantifier" : "all"
+    }
+  }, {
+    "problem" : "G",
+    "shouldNotBeVisible" : {
+      "scope" : "local",
+      "value" : [ "1", "0" ],
+      "quantifier" : "all"
+    }
+  }, {
+    "problem" : "H",
+    "shouldNotBeVisible" : {
+      "scope" : "local",
+      "value" : [ "1", "0" ],
+      "quantifier" : "all"
+    }
+  }, {
+    "problem" : "I",
+    "shouldNotBeVisible" : {
+      "scope" : "local",
+      "value" : [ "1", "0" ],
+      "quantifier" : "all"
+    }
+  }, {
+    "problem" : "J",
+    "shouldNotBeVisible" : {
+      "scope" : "local",
+      "value" : [ "1", "0" ],
+      "quantifier" : "all"
+    }
+  }, {
+    "problem" : "K",
+    "shouldNotBeVisible" : {
+      "scope" : "local",
+      "value" : [ "1", "0" ],
+      "quantifier" : "all"
+    }
+  }, {
+    "problem" : "L",
+    "shouldNotBeVisible" : {
+      "scope" : "local",
+      "value" : [ "1", "0" ],
+      "quantifier" : "all"
+    }
+  }
+]
+}
