@@ -1,3 +1,2 @@
-#!/bin/bash
-
-/usr/bin/python3 score.py $1 $2 $3 $4 $5
+#!/bin/sh
+/usr/bin/python3 score.py "$1" "$2" "$3"

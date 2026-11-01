@@ -57,5 +57,8 @@ string_io = io.StringIO()
 unittest.TextTestRunner(verbosity=2, stream=string_io).run(suite)
 scored_result = get_score(string_io.getvalue())
 
-print(string_io.getvalue(), file=sys.stderr)
-print("Score ", scored_result)
+log = string_io.getvalue()
+sys.stdout.write(log)
+if log and not log.endswith('\n'):
+    sys.stdout.write('\n')
+print(scored_result)

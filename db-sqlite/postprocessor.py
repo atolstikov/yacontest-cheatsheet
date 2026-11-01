@@ -1,35 +1,41 @@
-#!/usr/bin/python3
-
+#!/usr/bin/env python3
 import json
 import sys
-import traceback
 
-try:
-    # Стоимость задачи
-    max_value = 100
-    # Если different=True, то оценка ставится пропорционально пройденным тестам,
-    # исключая samples
-    different = False
-    testData = json.load(sys.stdin)["tests"]
-    important = ["testName", "verdict", "testsetName"]
-    tests = [{j: i.get(j, None) for j in important} for i in testData]
-    tests.sort(key=lambda x: x["testName"])
-    if different:
-        tests = [tests[i] for i in range(len(tests)) if
-                 (i == 0 or tests[i]["testName"] != tests[i - 1]["testName"]) and tests[i]["testsetName"] != 'samples']
-    else:
-        tests = [tests[i] for i in range(len(tests)) if (i == 0 or tests[i]["testName"] != tests[i - 1]["testName"])]
-    all_tests = len(tests)
-    ok = len(list(filter(lambda x: x["verdict"] == "ok", tests)))
-    if all_tests == 0:
-        mark = 0
-    elif different:
-        mark = round(max_value * ok / all_tests)
-    else:
-        mark = 0 if ok < all_tests else max_value
+# Стоимость задачи. different=True — доля пройденных тестов, samples не входят.
+# Для доли выключите прерывание тестирования при первой ошибке.
+MAX_VALUE = 100
+DIFFERENT = False
 
-    sys.stdout.write("{}\n".format(mark))
-except Exception as e:
-    sys.stdout.write('0\n')
-    traceback.print_exc(file=sys.stderr)
-    sys.exit(5)
+
+def unique_tests(tests):
+    ordered = sorted(tests, key=lambda item: item.get('testName') or '')
+    selected = []
+    for index, test in enumerate(ordered):
+        if index and test.get('testName') == ordered[index - 1].get('testName'):
+            continue
+        if DIFFERENT and test.get('testsetName') == 'samples':
+            continue
+        selected.append(test)
+    return selected
+
+
+def main():
+    tests = unique_tests(json.load(sys.stdin).get('tests') or [])
+    if not tests:
+        print(0)
+        return
+    accepted = sum(1 for test in tests if test.get('verdict') == 'ok')
+    if DIFFERENT:
+        print(round(MAX_VALUE * accepted / len(tests)))
+    else:
+        print(MAX_VALUE if accepted == len(tests) else 0)
+    print('{}/{}'.format(accepted, len(tests)))
+
+
+if __name__ == '__main__':
+    try:
+        main()
+    except Exception as exc:
+        print(0)
+        print(exc)

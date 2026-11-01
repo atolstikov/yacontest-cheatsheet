@@ -1,41 +1,39 @@
-#!/usr/bin/python
-
-import simplejson as json
-from sys import stdin, stderr, stdout
-import traceback
-import re
+#!/usr/bin/env python3
+import json
 import sys
 
 
-def getVerdicts(tests, testData):
-   verdicts = {}
-   for i in tests:
-       s = testData[i-1]["verdict"]
-       if s not in verdicts:
-           verdicts.update({s : 0})
-       verdicts.update({s : verdicts[s] + 1})
-   return ','.join(['%d %s' % (verdicts[j], j) for j in verdicts])
+def test_score(test):
+    score = test.get('score') or {}
+    if 'doubleScore' in score:
+        return float(score['doubleScore'])
+    if 'longScore' in score:
+        return float(score['longScore'])
+    return 0.0
 
 
-def getIfHas(d, v):
-    if v in d:
-       return d[v]
-    return None
+def main():
+    # json.load, not json.loads(input()): the documented payload is several lines.
+    tests = json.load(sys.stdin).get('tests') or []
+    seen = set()
+    total = 0.0
+    lines = []
+    for test in tests:
+        name = test.get('testName')
+        if name in seen:
+            continue
+        seen.add(name)
+        value = test_score(test) if test.get('verdict') == 'ok' else 0.0
+        total += value
+        lines.append('{} {} {}'.format(name, test.get('verdict'), value))
+    print(total)
+    if lines:
+        print('\n'.join(lines))
 
-try:
-    testData = json.load(stdin)["tests"]
 
-    important = ["testName", "verdict", "message"]
-    tests = [ {j : getIfHas(i,j) for j in important} for i in testData]
-
-    tests.sort(key = lambda x : x ["testName"])
-    tests = [ tests[i] for i in range(len(tests)) if i == 0 or tests[i]["testName"] != tests[i-1]["testName"] ]
-
-    answer = re.findall("\$.*\$", tests[0]["message"].replace('\n', ' '))
-    if (len(answer) != 0):
-        stdout.write(answer[0].replace("$","") + '\n')
-        # sys.exit(4)
-
-except Exception as e:
-    stdout.write('\n')
-    traceback.print_exc(file=stderr)
+if __name__ == '__main__':
+    try:
+        main()
+    except Exception as exc:
+        print(0)
+        print(exc)

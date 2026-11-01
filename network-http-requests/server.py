@@ -20,7 +20,7 @@ def get_one_news():
 
 
 def run():
-    app.run(port=7777, host='127.0.0.1', debug=True)
+    app.run(port=7777, host='127.0.0.1', debug=False, use_reloader=False)
 
 
 if __name__ == '__main__':

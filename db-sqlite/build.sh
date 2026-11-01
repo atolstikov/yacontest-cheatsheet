@@ -1,4 +1,10 @@
 #!/bin/sh
-if [ ! -f solution.py ]; then mv "${filename}" solution.py || true; fi
+OUT=solution.py
+TMP=$(mktemp ./upload.XXXXXX) || exit 1
+
+cat "${filename}" > "$TMP" || exit 1
+rm -f "${filename}"
+cat "$TMP" > "$OUT" || exit 1
+rm -f "$TMP"
 rm -rf __pycache__
 /usr/bin/python3 check.py

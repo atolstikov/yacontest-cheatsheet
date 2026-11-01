@@ -1,5 +1,6 @@
-build:
-	/bin/sh ./build.sh 1>&2
+all: build
 
+build:
+	/bin/sh ./build.sh
 run:
-	/usr/bin/python3 test.py
+	/bin/sh ./run.sh

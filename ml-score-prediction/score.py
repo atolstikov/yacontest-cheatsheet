@@ -1,33 +1,40 @@
-# encoding=utf-8
-
+#!/usr/bin/env python3
 import sys
+
 import numpy as np
 import pandas as pd
 from sklearn.metrics import f1_score
-import pickle
+
+OUT = 'answers.csv'
+N_ROWS = 3140
+
+
+def report(text):
+    with open(OUT, 'w', encoding='utf-8') as handle:
+        handle.write(text.rstrip() + '\n')
+
+
+def main():
+    try:
+        y_pred = pd.read_csv('data.csv', header=None).to_numpy()
+    except Exception as exc:
+        report('cannot read data.csv: {}'.format(exc))
+        return
+
+    if y_pred.shape != (N_ROWS, 1):
+        report('incorrect shape: {} instead of {}'.format(tuple(y_pred.shape), (N_ROWS, 1)))
+        return
+
+    y_true = pd.read_csv('true_answers.csv', header=0).to_numpy().ravel()
+    y_pred = y_pred.ravel()
+    value = f1_score(y_true, y_pred)
+    points = float(np.clip((value - 0.5) / 0.16, a_min=0.0, a_max=2.0))
+    report('{:.10f}'.format(points))
 
 
 if __name__ == '__main__':
-    target_path = 'true_answers.csv'
-    submitted_path = 'data.csv'
-
     try:
-        y_pred = pd.read_csv(submitted_path, header=None).values
-    except Exception as e:
-        print("$Error while reading answer file: " + str(e) + "$", file=open("answers.csv", "w"))
-        sys.exit(0)
-
-    try:
-        how_many = 3140
-
-        if y_pred.shape != (3140,1):
-            raise ValueError('$incorrect shape: {} instead {}$'.format(y_pred.shape, (3140,1)))
-
-        y_true = pd.read_csv(target_path, header=0).values
-        f1_score = f1_score(y_true, y_pred)
-
-    except ValueError as e:
-        print("$Error while validating .csv file: " + str(e) + "$", file=open("answers.csv", "w"))
-        sys.exit(0)
-
-    print(np.clip((f1_score - 0.5)/0.16,a_min=0., a_max=2.), file=open("answers.csv", "w"))
+        main()
+    except Exception as exc:
+        report('scoring failed: {}'.format(exc))
+    sys.exit(0)

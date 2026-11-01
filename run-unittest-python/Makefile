@@ -1,6 +1,6 @@
 all: build
 
 build:
-	/bin/sh ./doit.sh
+	/bin/sh ./build.sh
 run:
 	/bin/sh ./run.sh
