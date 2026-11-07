@@ -1,0 +1,39 @@
+{
+  "compile": [
+    "Makefile",
+    "build.sh",
+    "check.py"
+  ],
+  "runtime": [
+    "run.sh",
+    "test.py",
+    "server.py"
+  ],
+  "checker": [],
+  "postprocessor": [
+    "postprocessor.py"
+  ],
+  "tests": [
+    "001",
+    "002",
+    "003",
+    "004",
+    "005",
+    "006"
+  ],
+  "standard_checker": "cmp_file",
+  "rename": {
+    "tests/001": "tests/01",
+    "tests/001.a": "tests/01.a",
+    "tests/002": "tests/02",
+    "tests/002.a": "tests/02.a",
+    "tests/003": "tests/03",
+    "tests/003.a": "tests/03.a",
+    "tests/004": "tests/04",
+    "tests/004.a": "tests/04.a",
+    "tests/005": "tests/05",
+    "tests/005.a": "tests/05.a",
+    "tests/006": "tests/06",
+    "tests/006.a": "tests/06.a"
+  }
+}

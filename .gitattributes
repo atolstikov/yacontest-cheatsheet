@@ -1,0 +1,8 @@
+*.sh text eol=lf
+*.py text eol=lf
+*.cpp text eol=lf
+Makefile text eol=lf
+check_py text eol=lf
+*.db binary
+*.sqlite binary
+*.zip binary

@@ -1,0 +1,27 @@
+{
+  "compile": [
+    "Makefile",
+    "build.sh",
+    "check.py"
+  ],
+  "runtime": [
+    "run.sh",
+    "films0.db",
+    "films1.db",
+    "films2.db"
+  ],
+  "checker": [
+    "compare_result.py",
+    "films0.db",
+    "films1.db",
+    "films2.db"
+  ],
+  "postprocessor": [
+    "postprocessor.py"
+  ],
+  "tests": [
+    "001",
+    "002",
+    "003"
+  ]
+}

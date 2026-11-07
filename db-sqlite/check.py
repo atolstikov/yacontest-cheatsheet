@@ -1,17 +1,11 @@
+import subprocess
 import sys
-from flake8.api import legacy as flake8
 
 
-ignored_errors = ['W', 'E126', 'F841']
-excluded_files = ['check.py']
-line_length = 121
-
-
-style_guide = flake8.get_style_guide(ignore=ignored_errors,
-                                     excluded=excluded_files,
-                                     max_line_length=line_length)
-report = style_guide.check_files('solution.py')
-
-if report.get_statistics('E'):
+result = subprocess.run([
+    sys.executable, '-m', 'flake8', '--jobs=1', '--select=E',
+    '--ignore=W,E126,F841', '--max-line-length=121', 'solution.py',
+], check=False)
+if result.returncode:
     print('Код не соответствует стандарту PEP8\nили в нем есть синтаксические ошибки')
-    sys.exit(1)
+    sys.exit(result.returncode)

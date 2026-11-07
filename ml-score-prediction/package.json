@@ -1,0 +1,23 @@
+{
+  "compile": [
+    "Makefile",
+    "build.sh",
+    "run.sh",
+    "score.py",
+    "true_answers.csv"
+  ],
+  "runtime": [
+    "run.sh",
+    "score.py",
+    "true_answers.csv"
+  ],
+  "checker": [
+    "pointscmp.cpp"
+  ],
+  "postprocessor": [
+    "postprocessor.py"
+  ],
+  "tests": [
+    "01"
+  ]
+}

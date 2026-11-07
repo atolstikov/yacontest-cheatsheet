@@ -1,2 +1,2 @@
 #!/bin/sh
-/usr/bin/python3 score.py "$1" "$2" "$3"
+python3 score.py "$1" "$2" "$3"

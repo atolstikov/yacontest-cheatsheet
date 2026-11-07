@@ -1,0 +1,25 @@
+{
+  "compile": [
+    "Makefile",
+    "build.sh",
+    "check.py"
+  ],
+  "runtime": [
+    "run.sh",
+    "test.py"
+  ],
+  "checker": [],
+  "postprocessor": [
+    "postprocessor.py"
+  ],
+  "tests": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "sample01",
+    "sample02"
+  ],
+  "standard_checker": "cmp_file"
+}

@@ -2,3 +2,6 @@
 /run-unittest-python/tests.log
 *.pyc
 tests.log
+/dist/
+/.contest-staging/
+__pycache__/

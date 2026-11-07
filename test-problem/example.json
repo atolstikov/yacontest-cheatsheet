@@ -1,0 +1,22 @@
+{
+  "type": "TEST_PROBLEM",
+  "answer_type": "multiple",
+  "max_score": 100,
+  "options": [
+    {
+      "text": "SQLite поддерживает SQL-запросы.",
+      "correct": true
+    },
+    {
+      "text": "Для каждой SQLite-базы обязательно нужен отдельный серверный процесс.",
+      "correct": false
+    },
+    {
+      "text": "SQLite позволяет открыть базу в оперативной памяти через :memory:.",
+      "correct": true
+    }
+  ],
+  "checker": "STANDARD_CHECKER/cmp_file",
+  "postprocessor": "postprocessor.py",
+  "postprocessor_environment": "Python 3.13.2"
+}

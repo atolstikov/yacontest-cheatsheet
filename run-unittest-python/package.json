@@ -1,0 +1,17 @@
+{
+  "compile": [
+    "Makefile",
+    "build.sh"
+  ],
+  "runtime": [
+    "run.sh",
+    "run_tests.py"
+  ],
+  "checker": [
+    "score.py"
+  ],
+  "postprocessor": [],
+  "tests": [
+    "01"
+  ]
+}

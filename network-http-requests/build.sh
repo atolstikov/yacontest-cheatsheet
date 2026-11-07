@@ -7,4 +7,4 @@ rm -f "${filename}"
 cat "$TMP" > "$OUT" || exit 1
 rm -f "$TMP"
 rm -rf __pycache__
-/usr/bin/python3 check.py
+python3 check.py
