@@ -1,0 +1,15 @@
+image: python:3.12-slim
+
+stages:
+  - test
+
+check_notebook:
+  stage: test
+  script:
+    - python -m pip install -r requirements.txt
+    - python -m ipykernel install --user --name python3
+    - python check_notebook.py solution.ipynb --output executed.ipynb
+  artifacts:
+    when: always
+    paths:
+      - executed.ipynb

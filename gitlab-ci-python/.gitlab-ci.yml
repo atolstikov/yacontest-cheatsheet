@@ -1,0 +1,16 @@
+image: python:3.12-slim
+
+stages:
+  - test
+
+check_solution:
+  stage: test
+  script:
+    - python -m pip install -r requirements.txt
+    - python -m pytest -q test_solution.py --junitxml=report.xml
+  artifacts:
+    when: always
+    reports:
+      junit: report.xml
+    paths:
+      - report.xml

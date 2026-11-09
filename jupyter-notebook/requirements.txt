@@ -1,0 +1,3 @@
+nbformat>=5.10,<6
+nbclient>=0.10,<1
+ipykernel>=6,<8
