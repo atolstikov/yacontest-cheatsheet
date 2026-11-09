@@ -1,0 +1,60 @@
+{
+  "name": "Юнит-тесты арифметической функции",
+  "problemTypeMeta": "WITH_CHECKER",
+  "testFileType": "TEXT",
+  "fileSet": {
+    "inputFile": "no input",
+    "outputFile": "",
+    "redirectStdin": false,
+    "redirectStdout": true
+  },
+  "solutionLimits": {
+    "timeLimitMillis": 20000,
+    "idlenessLimitMillis": 10000,
+    "memoryLimit": 268435456,
+    "outputLimit": 67108864
+  },
+  "compilationLimits": {
+    "timeLimitMillis": 60000,
+    "idlenessLimitMillis": 60000,
+    "memoryLimit": 1598029824,
+    "outputLimit": 100000000
+  },
+  "fieldTypeMeta": "TEXT_OR_FILE",
+  "validation": {},
+  "answerTypeMeta": null,
+  "sectionVisibility": {
+    "showLimits": true,
+    "showIo": true,
+    "showSamples": true
+  },
+  "checkerSettings": {
+    "checkerType": "TESTLIB_EXITCODE",
+    "limits": {
+      "timeLimitMillis": 10000,
+      "idlenessLimitMillis": 10000,
+      "memoryLimit": 268435456,
+      "outputLimit": 268435456
+    },
+    "env": {},
+    "checkerFiles": [
+      "score.py"
+    ],
+    "compilerId": "python3_13",
+    "isScoring": true,
+    "checkerId": null,
+    "eps": null,
+    "absolute": null
+  },
+  "postProcessorSettings": null,
+  "maxScore": 5,
+  "testSets": [
+    {
+      "name": "All tests",
+      "inputFilePattern": "tests/{01-}",
+      "tests": [
+        "01"
+      ]
+    }
+  ]
+}

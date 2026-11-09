@@ -1,0 +1,67 @@
+{
+  "name": "SQLite: запрос к базе фильмов",
+  "problemTypeMeta": "WITH_CHECKER",
+  "testFileType": "TEXT",
+  "fileSet": {
+    "inputFile": "input.txt",
+    "outputFile": "output.txt",
+    "redirectStdin": true,
+    "redirectStdout": true
+  },
+  "solutionLimits": {
+    "timeLimitMillis": 1000,
+    "idlenessLimitMillis": 5000,
+    "memoryLimit": 268435456,
+    "outputLimit": 67108864
+  },
+  "compilationLimits": {
+    "timeLimitMillis": 60000,
+    "idlenessLimitMillis": 5000,
+    "memoryLimit": 1610612736,
+    "outputLimit": 268435456
+  },
+  "fieldTypeMeta": null,
+  "validation": {},
+  "answerTypeMeta": null,
+  "sectionVisibility": {
+    "showLimits": true,
+    "showIo": true,
+    "showSamples": true
+  },
+  "checkerSettings": {
+    "checkerType": "TESTLIB_EXITCODE",
+    "limits": {
+      "timeLimitMillis": 10000,
+      "idlenessLimitMillis": 5000,
+      "memoryLimit": 1610612736,
+      "outputLimit": 67108864
+    },
+    "env": {},
+    "checkerFiles": [
+      "compare_result.py",
+      "films0.db",
+      "films1.db",
+      "films2.db"
+    ],
+    "compilerId": "python3_13",
+    "isScoring": false,
+    "checkerId": null,
+    "eps": null,
+    "absolute": null
+  },
+  "postProcessorSettings": {
+    "compilerId": "python3_13"
+  },
+  "maxScore": 100,
+  "testSets": [
+    {
+      "name": "All tests",
+      "inputFilePattern": "tests/{001-}",
+      "tests": [
+        "001",
+        "002",
+        "003"
+      ]
+    }
+  ]
+}

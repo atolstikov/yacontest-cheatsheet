@@ -1,0 +1,67 @@
+{
+  "name": "SQLite: удаление фильмов",
+  "problemTypeMeta": "WITH_CHECKER",
+  "testFileType": "TEXT",
+  "fileSet": {
+    "inputFile": "input.txt",
+    "outputFile": "output.txt",
+    "redirectStdin": true,
+    "redirectStdout": false
+  },
+  "solutionLimits": {
+    "timeLimitMillis": 1000,
+    "idlenessLimitMillis": 10000,
+    "memoryLimit": 67108864,
+    "outputLimit": 67108864
+  },
+  "compilationLimits": {
+    "timeLimitMillis": 60000,
+    "idlenessLimitMillis": 60000,
+    "memoryLimit": 1598029824,
+    "outputLimit": 100000000
+  },
+  "fieldTypeMeta": "TEXT_OR_FILE",
+  "validation": {},
+  "answerTypeMeta": null,
+  "sectionVisibility": {
+    "showLimits": true,
+    "showIo": true,
+    "showSamples": true
+  },
+  "checkerSettings": {
+    "checkerType": "TESTLIB_EXITCODE",
+    "limits": {
+      "timeLimitMillis": 10000,
+      "idlenessLimitMillis": 10000,
+      "memoryLimit": 268435456,
+      "outputLimit": 268435456
+    },
+    "env": {},
+    "checkerFiles": [
+      "compare_result.py",
+      "films.db",
+      "films1.db",
+      "films2.db"
+    ],
+    "compilerId": "python3_13",
+    "isScoring": false,
+    "checkerId": null,
+    "eps": null,
+    "absolute": null
+  },
+  "postProcessorSettings": {
+    "compilerId": "python3_13"
+  },
+  "maxScore": 100,
+  "testSets": [
+    {
+      "name": "All tests",
+      "inputFilePattern": "tests/{01-}",
+      "tests": [
+        "01",
+        "02",
+        "03"
+      ]
+    }
+  ]
+}
